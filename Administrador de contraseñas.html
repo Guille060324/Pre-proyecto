@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Contraseñas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="initial-container" class="container">
+        <h1>Bienvenido</h1>
+        <button onclick="showSignup()">Crear Usuario</button>
+        <button onclick="showLogin()">Iniciar Sesión</button>
+    </div>
+
+    <div id="signup-container" class="container" style="display: none;">
+        <h1>Crear Usuario</h1>
+        <div class="signup-form">
+            <input type="email" id="signup-email" placeholder="Correo Electrónico">
+            <input type="text" id="signup-username" placeholder="Nombre de Usuario">
+            <input type="password" id="signup-password" placeholder="Ingrese la Contraseña">
+            <input type="password" id="signup-confirm-password" placeholder="Verifique la Contraseña">
+            <button onclick="createUser()">Crear Usuario</button>
+            <button onclick="showInitial()">Volver</button>
+        </div>
+    </div>
+
+    <div id="login-container" class="container" style="display: none;">
+        <h1>Iniciar Sesión</h1>
+        <div class="login-form">
+            <input type="text" id="login-username" placeholder="Nombre de Usuario">
+            <input type="password" id="login-password" placeholder="Contraseña">
+            <button onclick="login()">Iniciar Sesión</button>
+            <button onclick="showInitial()">Volver</button>
+        </div>
+    </div>
+
+    <div id="app-container" class="container" style="display: none;">
+        <h1>Generador de Contraseñas</h1>
+        <div class="generator">
+            <input type="text" id="generated-password" readonly>
+            <input type="text" id="site-name" placeholder="Nombre del Sitio">
+            <select id="password-type">
+                <option value="mixed">Combinación (Letras, Números y Símbolos)</option>
+                <option value="letters">Solo Letras</option>
+                <option value="numbers">Solo Números</option>
+            </select>
+            <button onclick="generatePassword()">Generar Contraseña</button>
+            <button onclick="savePassword()">Guardar Contraseña</button>
+        </div>
+        <h2>Contraseñas Guardadas</h2>
+        <ul id="password-list"></ul>
+        <button onclick="logout()">Cerrar Sesión</button>
+        <button onclick="showInitial()">Volver</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
